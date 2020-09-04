@@ -1,16 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import theme from '@hackclub/theme'
-import { Grid } from 'theme-ui'
+import { Grid, Box, Alert } from 'theme-ui'
 import CodeEditor from 'react-simple-code-editor'
 import { highlight, languages } from 'prismjs/components/prism-core'
 import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-markup'
 
-const Editor = ({ defaultValue = '', sx, ...props }) => {
+const Editor = ({ defaultValue = '', checks = [], autoFocus = false, children, sx, ...props }) => {
   const [content, setContent] = useState(defaultValue)
+  const [verified, setVerified] = useState(false)
+  useEffect(() => {
+    const verification = checks.map(check => check.constructor.name === "RegExp" ? content.match(check) : content.includes(check))
+    console.log(verification)
+    setVerified(verification.every(c => c === true))
+  }, [content])
   return (
     <Grid
+      gap={3}
+      my={4}
       sx={{
         bg: 'sunken',
         p: 3,
@@ -55,6 +63,7 @@ const Editor = ({ defaultValue = '', sx, ...props }) => {
         onValueChange={() => { }}
         onKeyDown={e => e.nativeEvent.stopImmediatePropagation()}
         highlight={code => highlight(code, languages.html)}
+        autoFocus={autoFocus}
         style={{ fontFamily: 'Menlo', fontSize: 20, backgroundColor: theme.colors.dark, color: theme.colors.white, borderRadius: theme.radii[2] }}
       />
       <iframe
@@ -62,6 +71,8 @@ const Editor = ({ defaultValue = '', sx, ...props }) => {
         frameBorder={0}
         src={`data:text/html,${encodeURIComponent(content)}`}
       />
+      {children && <Box as="article" sx={{ p: { fontSize: 3, px: 0, ':first-of-type': { mt: 0 } } }}>{children}</Box>}
+      {verified && <Alert as="section" sx={{ bg: 'green', borderRadius: 12, gridColumn: '-1 / 1', textAlign: 'center' }}>Great job!</Alert>}
     </Grid>
   )
 }

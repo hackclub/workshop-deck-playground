@@ -2,7 +2,6 @@ import "@hackclub/theme/fonts/reg-bold.css"
 import base from "@hackclub/theme"
 import { Grid, Flex, Box, Image } from "theme-ui"
 import { highlight } from "@mdx-deck/themes"
-// import { CodeEditor } from './components/editor'
 
 import CodeEditor from "./components/new-editor"
 
@@ -52,14 +51,14 @@ theme.styles.li = {
   <Box p={[3, 5]}>
 
 
-this is text
+## check out this code
 
 ```js
 const hi = "hi"
 console.log(hi)
 ```
 
-# hi
+## check out this other code
 
 ```js
 const hi = "hi"
@@ -76,11 +75,11 @@ console.log(hi)
 
 ---
 
+# This is a vertical stack
+
 ```html
 <h1>Hi!</h1>
 ```
-
-# This is a vertical stack
 
 ---
 
@@ -219,3 +218,92 @@ Testing
 <https://gist.github.com/ClaireBookworm/ebf3379ab6fb6840d5e6dfd70b05d62b>
 
 # test
+
+---
+
+# Hello!
+
+---
+
+<Invert>
+
+
+## Invert Layout
+
+</Invert>
+
+
+---
+
+<Split>
+
+
+![](https://source.unsplash.com/random/768x2048?brooklyn)
+
+## Split Layout
+
+</Split>
+
+
+---
+
+<SplitRight>
+
+
+![](https://source.unsplash.com/random/768x2048?brooklyn)
+
+## SplitRight Layout
+
+</SplitRight>
+
+
+---
+
+<Horizontal>
+
+
+## Horizontal Layout
+
+![](https://source.unsplash.com/random/768x2048?brooklyn)
+
+![](https://source.unsplash.com/random/768x2048?brooklyn)
+
+</Horizontal>
+
+
+---
+
+<FullScreenCode>
+
+
+```jsx
+<Button>FullScreenCode Layout</Button>
+```
+
+</FullScreenCode>
+
+
+---
+
+<ul>
+  <li>One</li>
+  <Steps>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+  </Steps>
+</ul>
+
+---
+
+## One
+
+<Steps>
+
+
+## Two
+
+## Three
+
+</Steps>
+
