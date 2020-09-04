@@ -1,0 +1,221 @@
+import "@hackclub/theme/fonts/reg-bold.css"
+import base from "@hackclub/theme"
+import { Grid, Flex, Box, Image } from "theme-ui"
+import { highlight } from "@mdx-deck/themes"
+// import { CodeEditor } from './components/editor'
+
+import CodeEditor from "./components/new-editor"
+
+export const theme = {
+  ...base,
+  ...highlight,
+}
+theme.styles.p = {
+  maxWidth: 980,
+  mx: "auto",
+  px: 3,
+}
+theme.styles.li = {
+  maxWidth: 980,
+  mx: "auto",
+  px: 3,
+}
+
+# Personal Website
+
+## Make your first website from scratch
+
+---
+
+![](https://cloud-az7fz0pav.vercel.app/dino_site.png)
+
+---
+
+<CodeEditor defaultValue="<h1>HI</h1>" />
+
+^ that's a code editor
+
+<CodeEditor
+  defaultValue="<h1>HI</h1>"
+  columns={2}
+  sx={{ width: "100% !important", bg: "transparent" }}
+/>
+
+---
+
+<Grid
+  columns={[null, null, '1fr 2fr']}
+  sx={{ height:'100vh', alignItems: 'center' }}
+>
+
+
+  <Box p={[3, 5]}>
+
+
+this is text
+
+```js
+const hi = "hi"
+console.log(hi)
+```
+
+# hi
+
+```js
+const hi = "hi"
+console.log(hi)
+```
+
+  </Box>
+
+
+![Test](https://cloud-az7fz0pav.vercel.app/dino_site.png)
+
+</Grid>
+
+
+---
+
+```html
+<h1>Hi!</h1>
+```
+
+# This is a vertical stack
+
+---
+
+<Grid columns={[null,null,2]} sx={{ px: [3, 4, 5], minHeight:'100vh', alignItems: 'center' }}>
+
+
+```js
+const hi = "hi"
+console.log(hi)
+```
+
+![Test](https://cloud-az7fz0pav.vercel.app/dino_site.png)
+
+</Grid>
+
+
+---
+
+<Grid
+  columns={[null,null,2]}
+  sx={{
+    px: [3, 4, 5], alignItems: 'center',
+  img: { width: 'auto', height: 'auto !important', maxHeight: [null, '33vh'] }
+   }}
+>
+
+
+  <Flex sx={{
+    flexDirection: 'column',
+    
+  }}>
+
+
+![Test](https://cloud-az7fz0pav.vercel.app/dino_site.png)
+![Test](https://cloud-az7fz0pav.vercel.app/dino_site.png)
+
+  </Flex>
+
+
+  <Box>
+
+
+![Test](https://cloud-az7fz0pav.vercel.app/dino_site.png)
+
+  </Box>
+
+
+</Grid>
+
+
+# heading
+
+text
+
+---
+
+# `random()`
+
+This command will result in a random value between **0 and 1**. That means around half the time the value will be bigger than 0.5 and around half the time the value will be less than 0.5.
+
+So what we could do is use the `random()` command and draw a left line if the value is bigger than 0.5, otherwise, we draw the right-to-left line.
+
+<Grid columns={[null, 2]}>
+
+
+```js
+function setup() {
+  createCanvas(400, 400)
+  noLoop()
+}
+```
+
+```js
+if (random() > 0.5) {
+  doAnAction()
+} else {
+  doSomeOtherAction()
+}
+```
+
+</Grid>
+
+
+---
+
+# For Loops
+
+```js
+for (var count = 0; count < 400; count = count + 100) {
+  doAnAction
+}
+```
+
+1. It declares a variable `var count = 0`
+2. It then adds one hundred _after_ running the loop: `count = count + 100`
+
+---
+
+# What does this draw?
+
+<Box sx={{ columnCount:[null,null,3], mt: 4, columnGap: 4, pre: { mt: 0, breakInside: 'avoid' } }}>
+
+
+```js
+function setup() {
+  createCanvas(400, 400)
+  noLoop()
+}
+```
+
+The gap between the lines
+
+```js
+function draw() {
+  background("PEACHPUFF")
+  var step = 20
+}
+```
+
+Testing
+
+```js
+function draw() {
+  background("PEACHPUFF")
+  var step = 20
+}
+```
+
+Testing
+
+</Box>
+
+
+---
+
+<https://gist.github.com/ClaireBookworm/ebf3379ab6fb6840d5e6dfd70b05d62b>
+
+# test
