@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mdx-deck build personal-website.mdx",
     "start": "mdx-deck deck.mdx",
     "start:website": "mdx-deck personal-website.mdx"
   },
