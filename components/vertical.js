@@ -18,8 +18,7 @@ export const Vertical = ({ ...props }) => {
         textAlign: 'center',
         img: {
           flex: '1 1 auto',
-          maxHeight: '66vh',
-          maxWiddth: '80vw'
+          maxHeight: '66vh'
         }
       }}>
       {children}
