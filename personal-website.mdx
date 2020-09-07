@@ -1,7 +1,8 @@
 import "@hackclub/theme/fonts/reg-bold.css"
 import base from "@hackclub/theme"
-import { Grid, Flex, Box, Image, Text } from "theme-ui"
+import { Grid, Flex, Box, Image, Text, Link as A } from "theme-ui"
 import { highlight } from "@mdx-deck/themes"
+import Vertical from './components/vertical'
 import Editor from "./components/editor"
 
 export const theme = {
@@ -21,23 +22,44 @@ theme.styles.li = {
 
 <Header>
 
+<A
+  href="https://hackclub.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Hack Club homepage"
+  sx={{ display: 'block', lineHeight: 0, mr: 'auto' }}
+>
+  <Image
+    src="https://assets.hackclub.com/flag-orpheus-top.svg"
+    alt="Hack Club flag"
+    sx={{ width: [96, 128] }}
+  />
+</A>
 
 ## Hack Club
 
 </Header>
 
+<Vertical>
 
 # Personal Website
 
-Make your first website from scratch
+Make your first website from scratch  
+by @MatthewStanciu
 
----
+![Screenshot of simple site made by this workshop](https://cloud-az7fz0pav.vercel.app/dino_site.png)
 
-![](https://cloud-az7fz0pav.vercel.app/dino_site.png)
+</Vertical>
 
 ---
 
 # What is HTML?
+
+<Notes>
+
+IDK, you tell me
+
+</Notes>
 
 ---
 
