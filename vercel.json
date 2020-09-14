@@ -1,4 +1,12 @@
 {
   "public": true,
-  "github": { "silent": true }
+  "github": {
+    "silent": true
+  },
+  "rewrites": [
+    {
+      "source": "/_deck/:path*",
+      "destination": "/:path*"
+    }
+  ]
 }

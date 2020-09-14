@@ -1,24 +1,5 @@
-import "@hackclub/theme/fonts/reg-bold.css"
-import base from "@hackclub/theme"
 import { Grid, Flex, Box, Image } from "theme-ui"
-import { highlight } from "@mdx-deck/themes"
-
-import CodeEditor from "./components/new-editor"
-
-export const theme = {
-  ...base,
-  ...highlight,
-}
-theme.styles.p = {
-  maxWidth: 980,
-  mx: "auto",
-  px: 3,
-}
-theme.styles.li = {
-  maxWidth: 980,
-  mx: "auto",
-  px: 3,
-}
+import CodeEditor from "../components/editor"
 
 # Personal Website
 
@@ -107,11 +88,7 @@ console.log(hi)
 >
 
 
-  <Flex sx={{
-    flexDirection: 'column',
-    
-  }}>
-
+  <Flex sx={{ flexDirection: 'column' }}>
 
 ![Test](https://cloud-az7fz0pav.vercel.app/dino_site.png)
 ![Test](https://cloud-az7fz0pav.vercel.app/dino_site.png)

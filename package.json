@@ -4,18 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "mdx-deck build personal-website.mdx",
-    "start": "mdx-deck deck.mdx",
-    "start:website": "mdx-deck personal-website.mdx"
+    "clean": "gatsby clean",
+    "build": "gatsby build --prefix-paths",
+    "dev": "gatsby develop",
+    "start": "yarn run dev"
   },
   "author": "MatthewStanciu",
   "license": "MIT",
   "dependencies": {
     "@hackclub/theme": "^0.3.0",
-    "mdx-deck": "^4.1.1",
+    "gatsby": "^2.24.58",
+    "gatsby-theme-mdx-deck": "^4.1.0",
     "prismjs": "^1.21.0",
     "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-simple-code-editor": "^0.11.0",
     "react-syntax-highlighter": "^13.5.1"
   }
