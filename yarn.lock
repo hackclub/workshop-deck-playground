@@ -11847,7 +11847,7 @@ theme-ui@^0.2.49:
     "@styled-system/css" "^5.0.16"
     deepmerge "^4.0.0"
 
-theme-ui@^0.3.0-alpha.6, theme-ui@^0.3.1:
+theme-ui@^0.3.0-alpha.6:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/theme-ui/-/theme-ui-0.3.1.tgz#b00ee2c03eb3d820536af8b121c64d13b3777cf0"
   integrity sha512-My/TSALqp7Dst5Ez7nJA+94Q8zJhc26Z0qGo8kEWyoqHHJ5TU8xdhjLPBltTdQck3T32cSq5USIeSKU3JtxYUQ==
