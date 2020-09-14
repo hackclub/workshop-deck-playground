@@ -423,7 +423,7 @@ Right now, the HTML file doesn't know the CSS file exists, so nothing we put in 
   Navigate back to your `index.html` file. Inside the `<head>`, add:
 
   ```html
-      <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
   ```
 
 </Flex>
@@ -433,9 +433,9 @@ Right now, the HTML file doesn't know the CSS file exists, so nothing we put in 
 <Flex sx={{ flexDirection: 'column' }}>
 
   ```html
-    <head>
-      <link rel="stylesheet" href="style.css" />
-    </head>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
   ```
 
 The `<link>` tag contains 2 attributes. `rel` indicates that we're linking a stylesheet. `href` gives the link to the file, just like `src` in the `<img>` tag.
@@ -542,15 +542,9 @@ Your journey is not over yet, though—it's time to hack!
 
 # Some things you can do to make your website better
 
-<Steps>
-
 1. If your website says "Prophet Orpheus", the first thing you should do is make it your own! Change the image and all the content to be about you or something you like.
-
 2. Change the colors to something you like! [Here are all of the CSS colors](https://www.w3schools.com/cssref/css_colors.asp), or you can google "hex color picker" and provide [hexademical color values](https://en.wikipedia.org/wiki/Web_colors).
-
 3. Deviate from the image/title/description format and do something wacky
-
-</Steps>
 
 ---
 
@@ -564,4 +558,8 @@ Your journey is not over yet, though—it's time to hack!
 
 ---
 
-<Text sx={{ fontSize: 10, fontWeight: 'bold' }}>Hacking Time</Text>
+<Invert>
+
+<Text sx={{ color: 'green', textShadow: '0 0 12px currentColor', fontSize: 10, fontWeight: 'bold' }}>Hacking Time</Text>
+
+</Invert>
