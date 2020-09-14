@@ -7,8 +7,10 @@ const theme = merge.all(
   // highlight,
   {
     useColorSchemeMediaQuery: false,
-    useLocalStorage: false,
-    fonts: base.fonts,
+    fonts: {
+      ...base.fonts,
+      monospace: 'SF Mono", "Roboto Mono", Menlo, Consolas, monospace'
+    },
     styles: {
       Slide: {
         fontSize: [3, 4],
@@ -42,5 +44,7 @@ const theme = merge.all(
     }
   }
 )
+
+delete theme.colors.modes
 
 export default theme
