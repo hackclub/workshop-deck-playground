@@ -6,6 +6,8 @@ const theme = merge.all(
   base,
   // highlight,
   {
+    useColorSchemeMediaQuery: false,
+    useLocalStorage: false,
     styles: {
       Slide: {
         fontSize: [3, 4],
