@@ -2,7 +2,7 @@
 import { jsx } from 'theme-ui'
 import React from 'react'
 
-export const Vertical = ({ ...props }) => {
+export const Vertical = ({ sx, ...props }) => {
   const children = React.Children.toArray(props.children)
 
   return (
@@ -19,7 +19,8 @@ export const Vertical = ({ ...props }) => {
         img: {
           flex: '1 1 auto',
           maxHeight: '66vh'
-        }
+        },
+        ...sx
       }}>
       {children}
     </div>

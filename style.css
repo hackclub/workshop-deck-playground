@@ -46,6 +46,9 @@ pre {
   margin: 1rem 0;
   border-radius: 1rem;
 }
+pre > code {
+  color: #a633d6 !important;
+}
 pre > code,
 .npm__react-simple-code-editor__textarea + pre {
   background-color: transparent !important;

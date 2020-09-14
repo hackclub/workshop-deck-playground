@@ -75,15 +75,17 @@ There’s a tag for every common element on a webpage: headings, text, buttons, 
 
 ---
 
+<Invert>
+
 # Write your own heading!
 
 <Editor checks={["<h1>", "</h1>"]}>
-
 
 Add your name between opening `<h1>` + closing `</h1>` tags
 
 </Editor>
 
+</Invert>
 
 ---
 
@@ -129,6 +131,8 @@ Repl.it gives us some code to start, but we're going to start from scratch. Dele
 
 ---
 
+<Vertical>
+
 Everything in an HTML file goes between opening and closing `<html>` tags.
 
 ```html
@@ -137,7 +141,11 @@ Everything in an HTML file goes between opening and closing `<html>` tags.
 </html>
 ```
 
+</Vertical>
+
 ---
+
+<Vertical sx={{ pre: { display: 'block', minWidth: 400 } }}>
 
 ## An HTML file typically contains a `<head>` and a `<body>`
 
@@ -153,6 +161,8 @@ Everything in an HTML file goes between opening and closing `<html>` tags.
 ```
 
 The body holds everything you see on your website, while the head conveys information about the page to the browser.
+
+</Vertical>
 
 ---
 

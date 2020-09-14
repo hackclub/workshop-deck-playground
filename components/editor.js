@@ -70,8 +70,8 @@ const Editor = ({ defaultValue = '', checks = [], children, sx, ...props }) => {
         frameBorder={0}
         src={`data:text/html,${encodeURIComponent(content)}`}
       />
-      {children && <Box as="article" sx={{ p: { fontSize: 3, px: 0, ':first-of-type': { mt: 0 } } }}>{children}</Box>}
-      {verified && <Alert as="section" sx={{ bg: 'green', borderRadius: 12, gridColumn: '-1 / 1', textAlign: 'center' }}>Great job!</Alert>}
+      {children && <Box as="article" sx={{ p: { fontSize: 3, px: 0, ':first-of-type': { mt: 0 }, code: { mx: 0 } } }}>{children}</Box>}
+      {verified && <Alert as="section" sx={{ bg: 'green', borderRadius: 12, gridColumn: '-1 / 1', justifyContent: 'center' }}>Great job!</Alert>}
     </Grid>
   )
 }

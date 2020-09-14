@@ -7,10 +7,7 @@ const theme = merge.all(
   // highlight,
   {
     useColorSchemeMediaQuery: false,
-    fonts: {
-      ...base.fonts,
-      monospace: 'SF Mono", "Roboto Mono", Menlo, Consolas, monospace'
-    },
+    fonts: base.fonts,
     styles: {
       Slide: {
         fontSize: [3, 4],
