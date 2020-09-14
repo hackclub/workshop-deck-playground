@@ -8,6 +8,7 @@ const theme = merge.all(
   {
     useColorSchemeMediaQuery: false,
     useLocalStorage: false,
+    fonts: base.fonts,
     styles: {
       Slide: {
         fontSize: [3, 4],
