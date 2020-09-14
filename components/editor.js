@@ -7,14 +7,14 @@ import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-markup'
 
-const Editor = ({ defaultValue = '', checks = [], autoFocus = false, children, sx, ...props }) => {
+const Editor = ({ defaultValue = '', checks = [], children, sx, ...props }) => {
   const [content, setContent] = useState(defaultValue)
   const [verified, setVerified] = useState(false)
   useEffect(() => {
     const verification = checks.map(check => check.constructor.name === "RegExp" ? content.match(check) : content.includes(check))
     console.log(verification)
     setVerified(verification.every(c => c === true))
-  }, [content])
+  }, [content, checks])
   return (
     <Grid
       gap={3}
@@ -63,7 +63,6 @@ const Editor = ({ defaultValue = '', checks = [], autoFocus = false, children, s
         onValueChange={() => { }}
         onKeyDown={e => e.nativeEvent.stopImmediatePropagation()}
         highlight={code => highlight(code, languages.html)}
-        autoFocus={autoFocus}
         style={{ fontFamily: 'Menlo', fontSize: 20, backgroundColor: theme.colors.dark, color: theme.colors.white, borderRadius: theme.radii[2] }}
       />
       <iframe
