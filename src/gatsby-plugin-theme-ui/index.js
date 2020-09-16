@@ -6,7 +6,7 @@ const theme = merge.all(
   base,
   // highlight,
   {
-    useColorSchemeMediaQuery: false,
+    useColorSchemeMediaQuery: true,
     fonts: base.fonts,
     styles: {
       Slide: {
@@ -38,10 +38,16 @@ const theme = merge.all(
         mx: 'auto',
         px: 3,
       }
+    },
+    colors: {
+      modes: {
+        dark: {
+          text: '#fff',
+          background: '#000',
+        }
+      }
     }
   }
 )
-
-delete theme.colors.modes
 
 export default theme
