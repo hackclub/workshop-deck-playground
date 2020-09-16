@@ -20,8 +20,8 @@
   font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  pre, code { background-color: transparent; }
+@media (prefers-color-scheme: light) {
+  pre, code { background-color:  #e0e6ed !important; }
 }
 
 /*
