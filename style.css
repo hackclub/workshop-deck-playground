@@ -20,6 +20,10 @@
   font-display: swap;
 }
 
+@media (prefers-color-scheme: dark) {
+  pre, code { background-color: transparent; }
+}
+
 /*
 Safari has a rendering bug that sometimes prevented text from rendering on certain slides.
 This is a hack that forces each new page to re-render.
