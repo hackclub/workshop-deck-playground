@@ -131,8 +131,9 @@ client.on("QuizEnd", () => {
 
 ```html
 client.on("QuestionStart", question => {
-  console.log(question)
   console.log("New question!");
+  console.log(question.question);
+  console.log("Answering Option A, I don't even know what it is!");
   question.answer(0);
 });
 ```
