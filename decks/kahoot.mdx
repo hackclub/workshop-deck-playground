@@ -1,0 +1,291 @@
+import { Grid, Flex, Box, Image, Text, Link as A } from "theme-ui";
+import Vertical from "../components/vertical";
+import Editor from "../components/editor";
+
+<Invert>
+<div style={{display: 'none'}}>
+
+# Hacking with Kahoot
+
+</div>
+<Text
+  sx={{
+    color: "purple",
+    textShadow: "0 0 7px currentColor",
+    fontSize: 7,
+    fontWeight: "bold",
+    textAlign: "center",
+  }}
+>
+  Hacking with
+  <Text
+    sx={{
+      color: "purple",
+      textShadow: "0 0 12px currentColor",
+      fontSize: 10,
+      fontWeight: "bold",
+      textAlign: "center",
+    }}
+  >
+    Kahoot
+  </Text>
+</Text>
+
+
+</Invert>
+
+
+---
+
+# An overview
+
+<img src="https://kahoot.com/files/2019/02/WhatIsKahoot_Play.png" height="300"/>
+
+Kahoot is a lot of fun, but we can make it extra funky by coding a 
+bot to play Kahoot for us (it covers up for all that hacking in class).
+
+In this workshop, we'll be using the "challenge" version of Kahoot
+as it is the most hackable.
+
+_Obviously be smart, don't actually use this in class_
+
+---
+
+# Load up our code editor
+
+<img
+  src="https://cloud-llm2ojik7.vercel.app/0screenshot_2020-12-10_at_2.07.23_pm.png"
+  alt="Repl.it"
+  height="500px"
+  style={{ padding: "30px" }}
+/>
+
+# `hack.af/node-repl`
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+
+# Initalising Kahoot
+
+<Text sx={{ paddingTop: 3, paddingBottom: 3 }}>
+  This code initializes the Kahoot module we'll be using for this workshop.
+</Text>
+
+```html
+const Kahoot = require("kahoot.js-updated"); 
+const client = new Kahoot();
+```
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# Connecting to a Kahoot Game
+
+<Text sx={{ paddingTop: 3, paddingBottom: 3 }}>
+  This code connects us to a Kahoot game. Make sure to add your name. 
+  Don't worry, we'll replace the Game PIN before we start.
+</Text>
+
+```html
+client.join(000000, Math.random() + "- Your Name");
+```
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# Logging Key Events
+
+<Text sx={{ paddingTop: 3, paddingBottom: 3 }}>
+  This code waits for certain events to occur and then logs it to the console.
+</Text>
+
+```html
+lient.on("QuizStart", () => {
+  console.log("The quiz has started!");
+});
+
+client.on("QuizEnd", () => {
+  console.log("The quiz has ended.");
+});
+```
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# Answering Questions
+
+<Text sx={{ paddingTop: 3, paddingBottom: 3 }}>
+  This code answers every question with the first answer from a randomised order from Kahoot.
+</Text>
+
+```html
+client.on("QuestionStart", question => {
+  console.log(question)
+  console.log("New question!");
+  question.answer(0);
+});
+```
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# How does this work?
+
+<Text sx={{ paddingTop: 3, paddingBottom: 3 }}>
+Each of these code snippets use a feature of Node.js called <strong>Events</strong>, here's the details:
+
+- When a key event happens, the Kahoot client emits an event.
+- When our program detects this event, it then runs the code inside the block.
+- In certain cases such as `QuestionStart` it passes information that we can use in our code.
+
+</Text>
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# Let's give it a go!
+
+<Text sx={{ paddingTop: 3, paddingBottom: 3 }}>
+
+- We'll be playing a very basic game of Kahoot
+- Your bot is simply guessing should get 2/5 questions correct if you answer the first answer.
+- You'll need to change `000000` to the game pin provided by your leader.
+
+</Text>
+
+</Flex>
+
+---
+
+<Invert style={{color: 'white!important'}}>
+
+# What are the results?
+
+<Text sx={{color: 'white!important', paddingTop: 4}}>Let's find out on Kahoot!</Text>
+
+</Invert>
+
+---
+
+<img src="https://files.slack.com/files-pri/T0266FRGM-F01GLFSBCKC/meeeeeeemmmee.jpg?pub_secret=f0278bb176" height="400" /> 
+
+<Text sx={{color: 'white!important', paddingTop: 5}}></Text>
+
+# Time for a challenge!
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# Here's the challenge:
+
+<Text sx={{ paddingTop: 3, paddingBottom: 3 }}>
+
+- We'll be playing another multiple choice Kahoot quiz
+- Your bot should be able to find the correct answer
+- Your bot should then answer the question with that answer
+
+</Text>
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# Helper Code
+
+<Text sx={{pt: 3}}>This function is passed an array of JSON objects and a key, 
+it will then return the index number of the JSON object that has that key as true. 
+This will be incredibly handy ;)</Text>
+
+```
+function verifyProperty(array, property) {
+  let finalNo
+  array.forEach(function(value, i) {
+    if (value[property] === true) {finalNo = i}
+  });
+  return(finalNo)
+}
+```
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# Hints:
+
+<Text sx={{ paddingTop: 2, paddingBottom: 3 }}>
+
+- Try console logging the `question` object, look for some choices
+- In `question.answer(x)`, `x` should be the index of the answer you'd like to check
+
+Happy hacking 😉
+
+</Text>
+
+</Flex>
+
+---
+
+<Invert style={{color: 'white!important'}}>
+
+# Were you able to get it?
+
+</Invert>
+
+---
+
+<Invert style={{color: 'white!important'}}>
+
+# Time for another test run! Good luck!
+
+</Invert>
+
+---
+
+<Flex sx={{ flexDirection: 'column', textAlign: 'left', width: '70%' }}>
+
+# Preparing for our final game:
+
+<Text sx={{ paddingTop: 2, paddingBottom: 3 }}>
+
+<Text>In a couple of moments, we'll be playing a final "open" 
+round where you can do what ever you want. Here a couple of idea seeds:</Text>
+
+- Communicate a cryptic message with your answers.
+- Spam the game with 100s of bot accounts using a loop
+- Make your program an actual Kahoot client that shows the question, potential answers and then let's the user answer.
+
+<Text>So what are you going to make?</Text>
+
+</Text>
+
+</Flex>
+
+---
+
+<Invert>
+
+<Text sx={{ color: 'purple', textShadow: '0 0 12px currentColor', fontSize: 10, fontWeight: 'bold' }}>Final Round!</Text>
+
+</Invert>
