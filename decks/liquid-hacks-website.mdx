@@ -1,0 +1,568 @@
+import { Grid, Flex, Box, Image, Text, Link as A } from "theme-ui"
+import Vertical from '../components/vertical'
+import Editor from "../components/editor"
+import Provider from "../components/provider"
+import { default } from '../src/gatsby-plugin-theme-ui'
+
+
+<Vertical>
+
+# Personal Website
+
+Make your first website from scratch
+by @MatthewStanciu
+
+![Screenshot of simple site made by this workshop](https://cloud-az7fz0pav.vercel.app/dino_site.png)
+
+</Vertical>
+
+---
+
+# An overview
+
+Making a website is just about writing text. You can do it in your browser for free.
+
+Basic websites are written in 2 languages: HTML to put content on the page, and CSS for styling and layout.
+
+---
+
+<Vertical>
+
+# An overview
+
+  HTML and CSS are the building blocks of the web. **Every website** is made with HTML and CSS 🤯
+
+
+  <Flex sx={{
+    img: {
+      flex: '1 1 auto',
+      maxWidth: '50vw'
+    } }}>
+
+
+  ![Hack Club Twitter](https://cloud-qy06fecsg.vercel.app/screen_shot_2020-09-07_at_3.29.28_pm.png)
+
+
+  ![The Former Pizza Huts subreddit](https://cloud-bdrh857tf.vercel.app/screen_shot_2020-09-07_at_3.31.27_pm.png)
+
+
+  </Flex>
+
+</Vertical>
+
+---
+
+# What is HTML?
+
+<Notes>
+
+IDK, you tell me
+
+</Notes>
+
+---
+
+# HTML is made up of `<tags>`
+
+There’s a tag for every common element on a webpage: headings, text, buttons, form inputs
+
+---
+
+# Each element has an opening & closing tag
+
+`<h1>` opens a heading, `</h1>` closes it. The content of the heading goes in between the opening and closing tags.
+
+```html
+<h1>This is a heading!</h1>
+```
+
+---
+
+<Invert>
+
+# Write your own heading!
+
+<Editor checks={["<h1>", "</h1>"]}>
+
+Add your name between opening `<h1>` + closing `</h1>` tags
+
+</Editor>
+
+</Invert>
+
+---
+
+# Congrats! You've written your first line of HTML.
+
+Your personal website is merely a collection of a few different types of HTML tags, not much different from what you just wrote. Ready to start building it?
+
+---
+
+<Vertical>
+
+
+![repl.it logo](https://cloud-baery5zi9.vercel.app/replit-logo.png)
+
+<https://repl.it/languages/html>
+
+</Vertical>
+
+
+---
+
+<Vertical>
+
+
+You should see something like this:
+
+![repl.it html starter](https://cloud-i88w26fj4.vercel.app/screen_shot_2020-09-04_at_12.30.49_pm.png)
+
+</Vertical>
+
+
+---
+
+<Vertical>
+
+
+Repl.it gives us some code to start, but we're going to start from scratch. Delete everything in the `index.html` file.
+
+![repl.it empty](https://cloud-fxrw1wlqu.vercel.app/screen_shot_2020-09-04_at_12.35.02_pm_1.png)
+
+</Vertical>
+
+
+---
+
+<Vertical>
+
+Everything in an HTML file goes between opening and closing `<html>` tags.
+
+```html
+<html>
+  <!-- content -->
+</html>
+```
+
+</Vertical>
+
+---
+
+<Vertical sx={{ pre: { display: 'block', minWidth: 400 } }}>
+
+## An HTML file typically contains a `<head>` and a `<body>`
+
+```html
+<html>
+  <head>
+
+  </head>
+  <body>
+
+  </body>
+</html>
+```
+
+The body holds everything you see on your website, while the head conveys information about the page to the browser.
+
+</Vertical>
+
+---
+
+At the top of every HTML page, you'll find `<!DOCTYPE html>`. This tells the browser what version of HTML to expect. Since it is a language, HTML is constantly growing and updating, so there are multiple versions. In our case, we are going to use HTML5, the latest version.
+
+---
+
+<Vertical>
+
+Start by adding `<!DOCTYPE html>` to the top of the `index.html` file of your repl.it project.
+
+![doctype html](https://cloud-4u72bs5d5.vercel.app/screen_shot_2020-09-04_at_12.49.35_pm.png)
+
+</Vertical>
+
+---
+
+<Vertical>
+
+Then, just under it, add the `<html>`, `<head>`, and `<body>` tags.
+
+![website skeleton tags](https://cloud-h7m2airqr.vercel.app/screen_shot_2020-09-04_at_12.50.01_pm.png)
+
+</Vertical>
+
+---
+
+Cool! Now that you've populated your website with the necessary tags it needs to run, it's time to add some content 🎉
+
+---
+
+<Flex sx={{ flexDirection: 'column' }}>
+
+Remember the `<h1>` tag you wrote earlier? Let's write another one, in between the `<body>` tags.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+   <h1>Prophet Orpheus</h1>
+  </body>
+</html>
+```
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column' }}>
+
+To give a description of Orpheus, we want to use the `<p>`, or "paragraph" tag.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+   <h1>Prophet Orpheus</h1>
+   <p>Coder Dino</p>
+  </body>
+</html>
+```
+
+</Flex>
+
+---
+
+<Vertical>
+
+To see what your website looks like so far, click the green "Run" button at the top of the code editor.
+
+![run repl](https://cloud-67htp8256.vercel.app/screen_shot_2020-09-04_at_1.15.27_pm.jpg)
+
+</Vertical>
+
+---
+
+![first viewing of the site](https://cloud-5ii8xkvwi.vercel.app/screen_shot_2020-09-04_at_1.15.04_pm.png)
+
+---
+
+<Flex sx={{ flexDirection: 'column' }}>
+
+You can even add a second `<p>` tag to further describe Orpheus!
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+   <h1>Prophet Orpheus</h1>
+   <p>Coder Dino</p>
+   <p>Will code for food</p>
+  </body>
+</html>
+```
+
+</Flex>
+
+---
+
+<Vertical>
+
+If you click the "Run" button again, you should see it update!
+
+![Orpheus description full](https://cloud-25godl11h.vercel.app/screen_shot_2020-09-04_at_1.20.56_pm.png)
+
+</Vertical>
+
+---
+
+We should probably add an image of Orpheus too.
+
+---
+
+# The `img` tag
+
+```html
+<img src="link-to-raw-image">
+```
+
+---
+
+<Horizontal>
+
+<Flex sx={{ flexDirection: 'column', px: '10px', textAlign: 'left' }}>
+
+```html
+<img src="link-to-raw-image">
+```
+
+1. `src` is an [attribute](https://www.w3schools.com/html/html_attributes.asp)
+2. Because the image tag can't have any text content like `<h1>` and `<p>` do, you don't need a closing tag
+3. The link to the image must be a direct file link, not a page with the image on it.
+
+</Flex>
+
+![google images: copy link vs copy image address](https://cloud-2ssqv3n95.vercel.app/screen_shot_2020-09-04_at_2.06.20_pm.png)
+
+</Horizontal>
+
+---
+
+```
+https://github.com/hackclub/dinosaurs/raw/main/smart_dinosaur_docs.png
+```
+
+---
+
+<Box sx={{ width: '75%' }}>
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+   <img src="https://github.com/hackclub/dinosaurs/raw/main/smart_dinosaur_docs.png">
+   <h1>Prophet Orpheus</h1>
+   <p>Coder Dino</p>
+   <p>Will code for food</p>
+  </body>
+</html>
+```
+
+</Box>
+
+---
+
+![Site without HTML](https://cloud-2sii1o713.vercel.app/screen_shot_2020-09-04_at_1.59.06_pm.png)
+
+---
+
+# Adding CSS
+
+---
+
+CSS is used to add styling to your HTML. Here's an example of what CSS looks like:
+
+```css
+h1 {
+  color: green;
+}
+```
+
+This piece of CSS finds all `<h1>` tags in your HTML file and changes the text in all of them to green.
+
+---
+
+Orpheus's image is a little too big, don't you think? Let's use CSS to resize it.
+
+---
+
+<Vertical>
+
+  Start by navigating to the `style.css` file at the left of your repl.it project.
+
+  ![style.css](https://cloud-qvrqeuzut.vercel.app/screen_shot_2020-09-04_at_2.19.37_pm.png)
+
+</Vertical>
+
+---
+
+<Grid columns={[null,null,2]} sx={{ px: [3, 4, 5], minHeight:'100vh', alignItems: 'center' }}>
+
+Select the `<img>` tag, then add opening and closing curly braces:
+
+```css
+img {
+
+}
+```
+
+</Grid>
+
+---
+
+<Grid columns={[null,null,2]} sx={{ px: [3, 4, 5], minHeight:'10vh', alignItems: 'center' }}>
+
+  And set the width to 200px. (Don't forget the semicolon at the end!)
+
+  ```css
+  img {
+    width: 200px;
+  }
+  ```
+
+</Grid>
+
+#### `px`, or "pixels", are a unit of measurement in CSS. [Learn more about CSS units here!](https://www.w3schools.com/cssref/css_units.asp)
+
+---
+
+<Vertical>
+
+If you run your repl, you should see that Orpheus is still big! :( Why do you think this is happening?
+
+  ![big orpheus even though we wrote css](https://cloud-fpzzhfcof.vercel.app/screen_shot_2020-09-04_at_2.39.25_pm.png)
+
+</Vertical>
+
+---
+
+Right now, the HTML file doesn't know the CSS file exists, so nothing we put in the CSS file will affect our HTML. To fix this, we need to **link the HTML file to the CSS file**.
+
+---
+
+<Flex sx={{ flexDirection: 'column' }}>
+
+  Navigate back to your `index.html` file. Inside the `<head>`, add:
+
+  ```html
+  <link rel="stylesheet" href="style.css" />
+  ```
+
+</Flex>
+
+---
+
+<Flex sx={{ flexDirection: 'column' }}>
+
+  ```html
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  ```
+
+The `<link>` tag contains 2 attributes. `rel` indicates that we're linking a stylesheet. `href` gives the link to the file, just like `src` in the `<img>` tag.
+
+`<link>` is a self-closing tag, as indicated by the `/>` at the end.
+
+</Flex>
+
+---
+
+<Vertical>
+
+  If you click "Run" again, you should notice that Orpheus is a much more reasonable size now!
+
+  ![Orpheus is smaller now](https://cloud-rn81goel5.vercel.app/screen_shot_2020-09-04_at_3.00.11_pm.png)
+
+</Vertical>
+
+---
+
+# What other styling changes can you think of?
+
+---
+
+<Grid columns={[null,null,2]} sx={{ px: [3, 4, 5], minHeight:'10vh', alignItems: 'center' }}>
+
+Why don't we center the content on the page?
+
+```css
+body {
+  text-align: center;
+}
+```
+
+</Grid>
+
+#### `<body>` wraps everything on the webpage, so this centers all text on the website.
+
+---
+
+<Grid columns={[null, null, 2]} sx={{ px: [3, 4, 5], minHeight:'10vh', alignItems: 'center' }}>
+
+  And while we're at it, why don't we also change the font to something nicer than Times New Roman?
+
+```css
+body {
+  text-align: center;
+  font-family: 'Arial';
+}
+```
+
+</Grid>
+
+---
+
+![Content is now centered and the font is Arial](https://cloud-ma6qdfqnv.vercel.app/screen_shot_2020-09-04_at_3.09.57_pm.png)
+
+---
+
+Much better! But it still looks a little bland. Let's add a little bit of color!
+
+---
+
+<Flex sx={{ flexDirection: 'column' }}>
+
+A good way to introduce color to your website is changing the background color and/or the color of the text. Here's an example:
+
+```css
+body {
+  text-align: center;
+  font-family: 'Arial';
+  background: azure;
+  color: purple;
+}
+```
+
+`background` sets the background color of the website, and `color` sets the color of all the text on the website.
+
+</Flex>
+
+---
+
+![Styled website](https://cloud-beo9jhgnv.vercel.app/screen_shot_2020-09-04_at_3.23.36_pm.png)
+
+---
+
+Great work! You just made your first website!!! 🎉🎉🎉
+
+---
+
+<Horizontal>
+
+Your website is now hosted on the internet, for free! You can share this URL with anyone and they'll see your website.
+
+![Final preview emphasizing repl.it url](https://cloud-lbdqaml0y.vercel.app/screen_shot_2020-09-07_at_4.10.12_pm.png)
+
+</Horizontal>
+
+---
+
+Your journey is not over yet, though—it's time to hack!
+
+---
+
+# Some things you can do to make your website better
+
+1. If your website says "Prophet Orpheus", the first thing you should do is make it your own! Change the image and all the content to be about you or something you like.
+2. Change the colors to something you like! [Here are all of the CSS colors](https://www.w3schools.com/cssref/css_colors.asp), or you can google "hex color picker" and provide [hexademical color values](https://en.wikipedia.org/wiki/Web_colors).
+3. Deviate from the image/title/description format and do something wacky
+
+---
+
+# Example websites made by other Hack Clubbers
+
+1. [Kat Huang](https://www.katmh.com)
+2. [Jevin Sidhu](https://www.jevinsidhu.com)
+3. [Theo Bleier](https://tmb.sh)
+4. [Sophie Huang](https://sohuang.github.io)
+5. [Megan Cui](https://megancui.com)
+
+---
+
+<Invert>
+
+<Text sx={{ color: 'green', textShadow: '0 0 12px currentColor', fontSize: 10, fontWeight: 'bold' }}>Hacking Time</Text>
+
+</Invert>
