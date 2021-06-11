@@ -1,0 +1,15 @@
+import { Grid, Flex, Box, Image, Text, Link as A } from "theme-ui"
+import Vertical from '../components/vertical'
+import Editor from "../components/editor"
+
+<Invert>
+
+# Write your own heading!
+
+<Editor checks={["<h1>", "</h1>"]}>
+
+Add your name between opening `<h1>` + closing `</h1>` tags
+
+</Editor>
+
+</Invert>
