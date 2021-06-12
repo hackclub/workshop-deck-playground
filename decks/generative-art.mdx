@@ -1,0 +1,432 @@
+import Vertical from '../components/vertical'
+import { Grid, Flex, Box, Image, Text, Link as A } from "theme-ui"
+
+<Vertical>
+
+  # Generative Art
+
+  <Flex sx={{
+    img: {
+      flex: '1 1 auto',
+      maxWidth: '50vw'
+    } }}>
+
+
+  ![](https://cloud-gzfx7sam8-hack-club-bot.vercel.app/0screen_shot_2021-06-12_at_13.11.40.png)
+
+
+  ![](https://cloud-gzfx7sam8-hack-club-bot.vercel.app/1screen_shot_2021-06-12_at_13.11.51.png)
+
+  </Flex>
+
+</Vertical>
+
+---
+
+<Vertical> 
+
+# hack.af/generative-tree
+
+![generative tree art](https://cloud-2e0mxt9ew-hack-club-bot.vercel.app/0screen_shot_2021-06-12_at_10.41.30.png)
+
+</Vertical>
+
+---
+
+# What goes into a piece of generative art?
+
+- **Randomness** is crucial for creating generative art. The art will be different each time you run the geenration script, so randomness is usually a large part of that.
+- **Algorithms** Implementing an algorithm visually can often generate awesome art, for example, the binary tree above.
+- **Geometry** Most generative art  incorporates shapes, and the math from high school geometry class can aid in some really cool effects.
+
+---
+
+**Jump into the sandbox**
+
+# hack.af/p5-sandbox
+
+---
+
+<Vertical>
+
+# hack.af/p5-sandbox
+
+![p5 editor](https://cloud-pa95p8ido-hack-club-bot.vercel.app/0screen_shot_2021-06-12_at_13.17.png)
+
+</Vertical>
+
+---
+
+<Vertical>
+
+```js
+function draw() {
+  background('PEACHPUFF')
+  ellipse(50, 50, 100)
+  ellipse(200, 200, 50)
+}
+```
+
+</Vertical>
+
+---
+
+<Vertical>
+
+![2 circles on canvas](https://cloud-lutkk504m-hack-club-bot.vercel.app/0screen_shot_2021-06-12_at_13.23.46.png)
+
+PEACHPUFF is from CSS colors. You can check out some of these colors:
+http://colours.neilorangepeel.com/
+
+</Vertical>
+
+---
+
+<Vertical>
+
+You've got 2 main functions that are used in nearly ever p5.js project:
+
+**setup( )** is called (once) right when the program starts. You'll use it for things like creating a canvas to draw on (using _createCanvas()_), and you may set some defaults there.
+
+**draw( )** is called after setup, and is executed constantly until you call _noLoop()_, which will stop it. You can control how many times it runs each second by using _frameRate()_.
+
+</Vertical>
+
+---
+
+<Vertical>
+
+![](https://cloud-4et2ybq4z-hack-club-bot.vercel.app/0screen_shot_2021-06-12_at_13.26.07.png)
+
+</Vertical>
+
+---
+
+<Vertical>
+
+<Flex>
+
+  <Vertical>
+
+  ```
+  line(0, 0, 400, 400)
+  ```
+
+  </Vertical>
+
+![](https://cloud-imryesvvg-hack-club-bot.vercel.app/53.png)
+
+</Flex>
+
+This means the line goes from (0,0) to (400, 400) -> the top left corner to the bottom right.
+
+</Vertical>
+
+---
+
+<Vertical>
+
+![](https://cloud-imryesvvg-hack-club-bot.vercel.app/44.png)
+
+</Vertical>
+
+---
+
+# random()
+
+This command will result in a random value between **0 and 1**. That means around half the time the value will be bigger than 0.5 and around half the time the value will be less than 0.5. 
+
+So what we could do is use the random() command and draw a left line if the value is bigger than 0.5, otherwise, we draw the right-to-left line.
+
+---
+
+```
+if (random() > 0.5) {
+  doAnAction
+} else {
+  doSomeOtherAction
+}
+```
+
+---
+
+<Vertical>
+
+<Flex>
+
+![](https://cloud-imryesvvg-hack-club-bot.vercel.app/17.png)
+
+![](https://cloud-imryesvvg-hack-club-bot.vercel.app/08.png)
+
+</Flex>
+
+Make sure to add noLoop(); - that makes sure the line is not flashing.
+
+</Vertical>
+
+---
+
+<Vertical>
+
+# For Loops
+
+```
+for (var count=0; count<400; count=count+100) {
+  doSomethingRepeatedly
+}
+```
+
+1. if declares a variable `var count = 0`
+2. it adds 100 _after_ running the loop: `count = count + 100`
+3. it checks if count is < 400 with `count < 400`
+
+</Vertical>
+
+---
+
+<Vertical>
+
+<Flex>
+
+![](https://cloud-leg4k84i1-hack-club-bot.vercel.app/01.png)
+
+![](https://cloud-leg4k84i1-hack-club-bot.vercel.app/12.png)
+
+</Flex>
+
+We can use the for loop in our drawing!
+This draws multiple lines… but not quite random.
+
+</Vertical>
+
+---
+
+<Vertical>
+
+<Flex>
+
+![](https://cloud-grrhfn8t4-hack-club-bot.vercel.app/25.png)
+![](https://cloud-grrhfn8t4-hack-club-bot.vercel.app/34.png)
+
+</Flex>
+</Vertical>
+
+---
+
+<Vertical>
+<Flex>
+
+![](https://cloud-grrhfn8t4-hack-club-bot.vercel.app/07.png)
+![](https://cloud-grrhfn8t4-hack-club-bot.vercel.app/16.png)
+</Flex>
+
+</Vertical>
+
+---
+
+<Vertical>
+
+# For loops all the way down...
+
+Let's put some for loops inside of our for loops
+
+![](https://cloud-84rsvr1ag-hack-club-bot.vercel.app/08.png)
+
+</Vertical>
+
+---
+
+<Vertical>
+<Flex>
+
+![](https://cloud-s3xvdpupn-hack-club-bot.vercel.app/09.png)
+
+We go from (0,0) to (400,400)! What do you think this will look like?
+
+</Flex>
+</Vertical>
+
+---
+
+<Vertical>
+
+# Surprise!
+
+![](https://cloud-qc38h2sgc-hack-club-bot.vercel.app/1screen_shot_2021-06-12_at_14.58.40.png)
+
+</Vertical>
+
+---
+
+<Vertical>
+
+<Flex>
+
+![](https://cloud-fuyqv77vv-hack-club-bot.vercel.app/0cake.png)
+![](https://cloud-fuyqv77vv-hack-club-bot.vercel.app/1pie.png)
+
+</Flex>
+
+Notice how step is > 20, which is the jump we have in the lines. This makes the gap effect!
+
+</Vertical>
+
+---
+
+<Vertical>
+
+![](https://cloud-efnwgmu36-hack-club-bot.vercel.app/01.png)
+
+We change the strokeWeight to be heavier as we near (400,400)
+
+The lines also have some that jump = step and some less than step (more precisely, step/2)
+
+</Vertical>
+
+---
+
+<Vertical>
+
+# Art!
+
+![](https://cloud-ch68lvzjc-hack-club-bot.vercel.app/02.png)
+
+</Vertical>
+
+---
+
+<Vertical>
+
+<Flex>
+
+![](https://cloud-ch68lvzjc-hack-club-bot.vercel.app/33.png)
+
+![](https://cloud-ch68lvzjc-hack-club-bot.vercel.app/15.png)
+
+</Flex>
+
+</Vertical>
+
+---
+
+# Let's talk color!
+
+```
+let c = color(255, 204, 0);
+fill(c);
+noStroke();
+rect(30, 20, 55, 55);
+```
+
+---
+
+# Let's talk color!
+
+```
+let c = color(255, 204, 0);
+fill(c);
+noStroke();
+rect(30, 20, 55, 55);
+```
+
+![](https://cloud-d6b7qrk6q-hack-club-bot.vercel.app/0yellow.png)
+
+**Yellow**
+
+---
+
+# Let's talk color!
+
+```
+let c = color('magenta');
+fill(c);
+noStroke();
+rect(20, 20, 60, 60);
+```
+
+---
+
+# Let's talk color!
+
+```
+let c = color('magenta');
+fill(c);
+noStroke();
+rect(20, 20, 60, 60);
+```
+
+![](https://cloud-d6b7qrk6q-hack-club-bot.vercel.app/1not-yellow.png)
+
+**Not Yellow**
+
+---
+
+<Vertical>
+
+![](https://cloud-nr9vh7xtn-hack-club-bot.vercel.app/0draw.png)
+
+</Vertical>
+
+---
+
+<Vertical>
+
+Try more colors at: http://colours.neilorangepeel.com/
+
+</Vertical>
+
+---
+
+<Vertical>
+
+<Flex>
+
+![](https://cloud-6myrmvqw7-hack-club-bot.vercel.app/0squares.png)
+
+![](https://cloud-6myrmvqw7-hack-club-bot.vercel.app/1squareezzz.png)
+
+</Flex>
+
+hack.af/sqr-ex
+
+</Vertical>
+
+---
+
+# Hack'n Time!
+
+![](https://cloud-458m70fx3-hack-club-bot.vercel.app/0screen_shot_2021-06-12_at_12.43.02_pm.png)
+<!-- ![](https://cloud-k77v10yp2-hack-club-bot.vercel.app/0structurrr.png)
+![](https://cloud-k77v10yp2-hack-club-bot.vercel.app/1colour.png)
+![](https://cloud-k77v10yp2-hack-club-bot.vercel.app/22d-savages.png) -->
+
+---
+
+<Vertical>
+
+<Flex>
+
+![](https://cloud-imfv9kitd-hack-club-bot.vercel.app/0into-the-void.png)
+
+![](https://cloud-imfv9kitd-hack-club-bot.vercel.app/1void-grid.png)
+
+</Flex>
+
+See the code for these examples at hack.af/no-eyes & hack.af/chequer-board
+
+</Vertical>
+
+---
+
+<Vertical>
+
+<Flex>
+
+![](https://cloud-ra4c8mztz-hack-club-bot.vercel.app/0communism.png)
+
+![](https://cloud-ra4c8mztz-hack-club-bot.vercel.app/1n0-idea.png)
+
+</Flex>
+
+See the code for these examples at hack.af/ex-com & hack.af/ex-uip
+</Vertical>
