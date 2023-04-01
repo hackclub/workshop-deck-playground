@@ -1,0 +1,196 @@
+import Vertical from "../components/vertical";
+
+<Vertical>
+
+
+# Sprig
+
+![cool 3d redner  of SPrig console](https://cloud-oze2d1tmi-hack-club-bot.vercel.app/0frame_2__5_.png)
+
+Build an original game and get a free hardware console!
+
+</Vertical>
+
+
+---
+
+# What is Sprig?
+
+- a game engine with a custom web editor
+- a physical hardware console
+
+###### 🌱 a bean sprout 🌱
+
+---
+
+<Vertical>
+
+
+ <Flex sx={{
+    img: {
+      flex: '1 1 auto',
+      maxWidth: '50vw'
+    } }}>
+
+
+![photo of console](https://cloud-efu02pgzz-hack-club-bot.vercel.app/0image.png)
+
+![screenshot of editor](https://cloud-efu02pgzz-hack-club-bot.vercel.app/1screenshot_2023-04-01_at_10.31.00_am.png)
+
+</Flex>
+
+
+</Vertical>
+
+
+---
+
+# Getting started
+
+1. Go to <a href="https://sprig.hackclub.com">sprig.hackclub.com</a>
+2. "Open Editor" in the top right
+3. Enter your email to save your game (or continue without an account)
+
+---
+
+![screeshot of blank editor](https://cloud-baaht92oy-hack-club-bot.vercel.app/0screenshot_2023-04-01_at_10.53.33_am.png)
+
+---
+
+<Vertical>
+
+
+# Make your first Sprig game ➡️
+
+## "Catch Orpheus"
+
+![vibe blob](https://cloud-awkyneczl-hack-club-bot.vercel.app/0vibe_blob.gif)
+
+</Vertical>
+
+
+---
+
+<a href="https://hack.af/sprig-catch" style={{ fontWeight: "bold" }}>
+  hack.af/sprig-catch
+</a>
+
+---
+
+Create a player, enemy, background, & add to `setLegend`.
+
+```javascript
+const player = "p";
+const orpheus = "o";
+const background = “b";
+
+setLegend(
+    [ player, bitmap``],
+    [ background, bitmap``],
+    [ orpheus, bitmap``]
+)
+```
+
+---
+
+# Set the background:
+
+# `setBackground(background)`
+
+---
+
+# Move the player:
+
+Currently, there is:
+
+```js
+onInput("s", () => {
+  getFirst(player).y += 1;
+});
+```
+
+🫵 Do the same with
+"w", "a", and "d".
+
+---
+
+# Randomly move the enemy, Orpheus
+
+Every time the player moves, Orpheus randomly moves.
+
+```js
+getFirst(orpheus).y += Math.FLOOR(Math.random() * 5) - 2;
+```
+
+🫵 Add this in your `onInput()` functions.
+
+---
+
+# 🏆 Adding a "win" state
+
+![dino winning](https://cloud-anr5zr1u8-hack-club-bot.vercel.app/0image.png)
+
+---
+
+# Check if the player and Orpheus overlap
+
+Put this in your `afterInput()` function.
+
+```js
+if (
+  getFirst(player).x == getFirst(orpheus).x &&
+  getFirst(player).y == getFirst(orpheus).y
+) {
+  // something here!
+}
+```
+
+---
+
+# Add some "you win" text
+
+Put this inside the `if` statement you just wrote.
+
+```js
+addText("you win!", {
+  x: 10,
+  y: 4,
+  color: color`3`,
+});
+```
+
+---
+
+# Reset the game
+
+This also goes inside the `afterInput()` function.
+
+```javascript
+setTimeout(() => setMap(levels[0]), 2000);
+
+setTimeout(() => clearText(), 2000);
+```
+
+---
+
+# Hack it!
+
+## Make the game your own. Here are some ideas:
+
+- Make Orpheus move randomly without the player moving
+- Add a second player, maybe both have to be on top of Orpheus to win
+- Add a step counter to make the game harder
+- Your idea here!
+
+---
+
+<Vertical>
+<h1>Get your own Sprig console</h1>
+
+
+Add your game to the gallery ➡️ <a href="https://sprig.hackclub.com/get">sprig.hackclub.com/get</a>
+
+![photo of console](https://cloud-efu02pgzz-hack-club-bot.vercel.app/0image.png)
+
+</Vertical>
+
